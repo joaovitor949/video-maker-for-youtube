@@ -1,4 +1,4 @@
-const readline = require('readline-sync')
+const readline = require('./node_modules/@types/readline-sync')
 const robots = {
     text: require('./robots/text.js')
 }

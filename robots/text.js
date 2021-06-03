@@ -9,7 +9,7 @@ const setenceBoundaryDetection = require('sbd')
 
   await fetchContentFromWikipedia(content)
     sanitizeContent(content)
-    breakContentIntoSetence(content)
+   breakContentIntoSetences(content)
     //limitMaximumSetences(content)
    //await fetchKeywords0fAllSetences(content)
 
@@ -28,9 +28,7 @@ const setenceBoundaryDetection = require('sbd')
 
     function sanitizeContent(content) {
         const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal)
-        const withoutDatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown)
-    
-        console.log(withoutBlankLinesAndMarkdown)
+        const withoutDatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown)   
 
         content.sourceContentSanitized = withoutDatesInParentheses
     
@@ -53,18 +51,18 @@ const setenceBoundaryDetection = require('sbd')
         return text.replace(/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g,' ')
     }
 
-    function breakContentIntoSetences(content) {
-        content.sentences = []
+     function breakContentIntoSetences(content) {
+      content.sentences = []
 
-        const setences = setenceBoundaryDetection.sentences(content.sourceContentSanitized)
-        setences.forEach((stence) => {
-            content.setences.push({
-                text: setenceBoundaryDetection,
-                keywords: [],
-                images: []
+        const sentences = setenceBoundaryDetection.sentences(content.sourceContentSanitized)
+        sentences.forEach((sentence) => {
+            content.sentences.push({
+            text: sentence,
+            keywords: [],
+            images: []
             })
-        })
-    }
+         })
+          console.log(sentences)
+      }
 }
-
 module.exports = robot
