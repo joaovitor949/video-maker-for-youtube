@@ -1,0 +1,28 @@
+{
+  "name": "youtube_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaovitor949/youtube_automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaovitor949/youtube_automation/issues"
+  },
+  "homepage": "https://github.com/joaovitor949/youtube_automation#readme",
+  "dependencies": {
+    "algorithmia": "^0.3.10",
+    "check-node-version": "^4.1.0",
+    "readline": "^1.3.0",
+    "readline-sync": "file:readline-sync",
+    "sbd": "^1.0.19",
+    "sdb-node": "^0.2.2",
+    "watson-developer-cloud": "^4.0.0"
+  }
+}
